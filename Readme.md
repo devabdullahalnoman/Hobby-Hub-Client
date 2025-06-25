@@ -56,7 +56,7 @@ To run this project locally:
    
 2. **Install dependencies**
  ```bash
-npm install
+    npm install
 
 3. **Set up environment variables Create a .env.local file and add:**
 
@@ -70,7 +70,7 @@ npm install
 4. **Start the development server**
 
  ```bash
-npm run dev
+    npm run dev
 
 View the app Open http://localhost:5173
 
