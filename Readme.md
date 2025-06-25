@@ -54,7 +54,7 @@ To run this project locally:
    git clone https://github.com/your-username/hobbyhub-client.git
    cd hobbyhub-client
    
- 2. **Install dependencies**
+2. **Install dependencies**
  ```bash
 npm install
 
