@@ -55,7 +55,7 @@ To run this project locally:
    cd hobbyhub-client
    
  2. **Install dependencies**
- bash
+``` bash
 npm install
 
 3. **Set up environment variables Create a .env.local file and add:**
@@ -69,9 +69,9 @@ VITE_appId=your_app_id
         
 4. **Start the development server**
 
- bash
+ ```bash
 npm run dev
 
-  View the app Open http://localhost:5173```
+  View the app Open http://localhost:5173
 
 
