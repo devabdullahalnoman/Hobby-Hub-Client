@@ -52,7 +52,6 @@ your own, and participate in meetups—all in one place!
 - globals: ^16.0.0
 - tailwindcss: ^4.1.7
 - vite: ^6.3.5
-  }
 
 ## Features
 
