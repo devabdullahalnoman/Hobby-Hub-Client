@@ -55,7 +55,7 @@ To run this project locally:
    cd hobbyhub-client
    
  2. **Install dependencies**
-``` bash
+    ```bash
 npm install
 
 3. **Set up environment variables Create a .env.local file and add:**
