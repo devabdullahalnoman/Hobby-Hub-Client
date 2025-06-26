@@ -15,6 +15,8 @@ import PageNotFound from "../404Page/PageNotFound";
 import ContactUs from "../Components/ContactUs";
 import Dashboard from "../Layouts/Dashboard";
 import DashOverview from "../Components/DashOverview";
+import MyJoinedGroups from "../Components/MyJoinedGroups";
+import DashAllGroups from "../Components/DashAllGroups";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +83,14 @@ const router = createBrowserRouter([
             ),
           },
           {
+            path: "dashAllGroups",
+            element: (
+              <PrivateRoutes>
+                <DashAllGroups></DashAllGroups>
+              </PrivateRoutes>
+            ),
+          },
+          {
             path: "createGroup",
             element: (
               <PrivateRoutes>
@@ -93,6 +103,14 @@ const router = createBrowserRouter([
             element: (
               <PrivateRoutes>
                 <MyGroups></MyGroups>
+              </PrivateRoutes>
+            ),
+          },
+          {
+            path: "myJoinedGroups",
+            element: (
+              <PrivateRoutes>
+                <MyJoinedGroups></MyJoinedGroups>
               </PrivateRoutes>
             ),
           },

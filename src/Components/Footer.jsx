@@ -14,12 +14,6 @@ const Footer = () => {
             <NavLink to="/allGroups">All Groups</NavLink>
           </li>
           <li>
-            <NavLink to="/createGroup">Create Group</NavLink>
-          </li>
-          <li>
-            <NavLink to="/myGroups">My Groups</NavLink>
-          </li>
-          <li>
             <NavLink to="/contactUs">Contact Us</NavLink>
           </li>
         </ul>

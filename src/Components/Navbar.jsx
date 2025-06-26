@@ -156,7 +156,7 @@ const Navbar = () => {
               <div className="flex items-center">
                 <div className="avatar relative group mr-3">
                   <div className="w-12 rounded-full">
-                    <img src={user.photoURL} />
+                    <img src={user?.photoURL} />
                   </div>
                   <p className="absolute z-10 top-14 text-2xl right-4 bg-base-100 rounded-sm px-3 hidden group-hover:flex">
                     {user.displayName}

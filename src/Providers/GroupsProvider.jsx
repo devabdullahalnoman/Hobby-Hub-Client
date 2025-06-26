@@ -4,6 +4,7 @@ import { GroupsContext } from "../Contexts/GroupsContext";
 const GroupsProvider = ({ children }) => {
   const [groupsData, setGroupsData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [members, setMembers] = useState(groupsData.members);
 
   useEffect(() => {
     fetch("https://hobby-hub-server-chi.vercel.app/")
@@ -29,6 +30,8 @@ const GroupsProvider = ({ children }) => {
     setGroupsData,
     formatDate,
     loading,
+    members,
+    setMembers,
   };
 
   return <GroupsContext value={providerData}>{children}</GroupsContext>;
