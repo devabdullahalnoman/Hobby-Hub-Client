@@ -13,7 +13,7 @@ const FeaturedGroups = () => {
 
   return (
     <div className="my-15">
-      <h1 className="text-center text-4xl mb-4 font-extrabold">
+      <h1 className="text-center text-4xl mb-6 font-extrabold">
         Featured Groups
       </h1>
       <div className="bg-base-200">

@@ -17,6 +17,7 @@ import Dashboard from "../Layouts/Dashboard";
 import DashOverview from "../Components/DashOverview";
 import MyJoinedGroups from "../Components/MyJoinedGroups";
 import DashAllGroups from "../Components/DashAllGroups";
+import AboutUs from "../Components/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>,
+      },
+      {
+        path: "/aboutUs",
+        element: <AboutUs></AboutUs>,
       },
       {
         path: "/contactUs",

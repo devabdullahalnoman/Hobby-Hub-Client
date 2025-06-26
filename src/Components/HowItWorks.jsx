@@ -4,7 +4,7 @@ import { Slide } from "react-awesome-reveal";
 
 const HowItWorks = () => {
   return (
-    <Slide direction="right">
+    <Slide direction="right" triggerOnce>
       <div className="w-11/12 mx-auto my-8 bg-base-200 px-4 md:px-8 lg:px-18 pb-12 rounded-2xl">
         <h1 className="text-4xl text-center py-8">
           How It Works – Steps to Get Started
