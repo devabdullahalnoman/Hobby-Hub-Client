@@ -69,13 +69,13 @@ const GroupDetails = () => {
       </div>
 
       <div className="lg:grid grid-cols-12 w-10/12 mx-auto">
-        <div className="col-span-6">
+        <div className="col-span-5">
           <figure className="flex flex-col">
             <img src={group.groupPhoto} alt="group banner" />
             <figcaption>Artistic Vibe</figcaption>
           </figure>
         </div>
-         <div className="divider divider-horizontal"></div>
+         <div className="divider divider-horizontal col-span-2 mx-auto"></div>
         <div className="col-span-5">
           <div className="card-body">
             <p className="text-2xl mt-3">
