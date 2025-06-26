@@ -6,13 +6,13 @@ import Footer from "../Components/Footer";
 const MainLayout = () => {
   return (
     <div>
-      <header>
+      <header className="sticky top-0 z-10 bg-primary text-base-content">
         <Navbar></Navbar>
       </header>
-      <main>
+      <main className="bg-base-100">
         <Outlet></Outlet>
       </main>
-      <footer>
+      <footer className="bg-primary">
         <Footer></Footer>
       </footer>
     </div>

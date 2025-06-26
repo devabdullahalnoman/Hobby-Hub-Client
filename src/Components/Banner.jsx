@@ -12,15 +12,13 @@ const Banner = () => {
   return (
     <>
       <Swiper
-        modules={[Navigation, Autoplay]}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        navigation
+        modules={[Autoplay]}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
         loop={true}
         direction="horizontal"
-        className="my-12"
       >
         <SwiperSlide>
-          <div className="bg-[url('assets/bb-1.png')] bg-cover bg-center w-11/12 mx-auto my-2 rounded-2xl lg:flex lg:justify-between justify-center items-center px-16 h-[28rem] md:h-[36rem]">
+          <div className="bg-[url('assets/bb-1.png')] bg-cover bg-center mx-auto lg:flex lg:justify-between justify-center items-center px-16 h-[28rem] md:h-[36rem]">
             <div className="text-center lg:text-left pt-7 lg:pt-0 space-y-4 lg:space-y-9">
               <h1 className="text-4xl sm:text-5xl md:text-6xl text-base-100">
                 Discover Your Passion
@@ -39,7 +37,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-[url('assets/bb-2.png')] bg-cover bg-center w-11/12 mx-auto my-2 rounded-2xl lg:flex lg:justify-between justify-center items-center px-16 h-[28rem] md:h-[36rem]">
+          <div className="bg-[url('assets/bb-2.png')] bg-cover bg-center lg:flex lg:justify-between justify-center items-center px-16 h-[28rem] md:h-[36rem]">
             <div className="text-center lg:text-left pt-7 lg:pt-0 space-y-4 lg:space-y-9">
               <h1 className="text-4xl sm:text-5xl md:text-6xl text-base-100">
                 Create & Grow Your Own Group
@@ -57,7 +55,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="bg-[url('assets/bb-3.png')] bg-cover bg-center w-11/12 mx-auto my-2 rounded-2xl lg:flex lg:justify-between justify-center items-center px-16 h-[28rem] md:h-[36rem]">
+          <div className="bg-[url('assets/bb-3.png')] bg-cover bg-center lg:flex lg:justify-between justify-center items-center px-16 h-[28rem] md:h-[36rem]">
             <div className="text-center lg:text-left pt-5 lg:pt-0 space-y-4 lg:space-y-9">
               <h1 className="text-4xl sm:text-5xl md:text-6xl text-base-100">
                 Join Exciting Local Events
