@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const DashSideBar = () => {
   return (
-    <div className="card card-lg p-7 text-base-content lg:w-11/12 h-fit bg-base-300">
+    <div className="card card-lg p-4 xl:p-7 text-base-content lg:w-full xl:w-11/12 h-fit bg-base-300">
       <h1 className="card-title text-3xl">Navigation</h1>
       <ul className="text-xl flex flex-col gap-3 mt-5">
         <li>

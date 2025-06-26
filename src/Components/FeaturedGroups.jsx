@@ -1,7 +1,7 @@
 import React, { use } from "react";
 import { GroupsContext } from "../Contexts/GroupsContext";
-import FeaturedGroupsCard from "./FeaturedGroupsCard";
-import Marquee from "react-fast-marquee";
+import GroupCard from "./GroupCard";
+import LoadingSpinner from "./LoadingSpinner";
 
 const FeaturedGroups = () => {
   const { groupsData, loading } = use(GroupsContext);
@@ -9,31 +9,24 @@ const FeaturedGroups = () => {
 
   const featuredGroups = groupsData
     .filter((group) => new Date(group.startDate) >= today)
-    .slice(0, 6);
+    .slice(0, 8);
 
   return (
-    <div className="w-11/12 mx-auto my-16">
-      <h1 className="text-center text-4xl mb-4">Featured Groups</h1>
-      {loading ? (
-        <div className="flex items-center justify-center h-64">
-          <span className="loading loading-dots loading-xl"></span>
-        </div>
-      ) : (
-        <Marquee
-          pauseOnHover
-          gradient
-          gradientColor="#555555a1"
-          className="rounded-2xl"
-          gradientWidth={40}
-        >
-          {featuredGroups.map((group) => (
-            <FeaturedGroupsCard
-              key={group._id}
-              group={group}
-            ></FeaturedGroupsCard>
-          ))}
-        </Marquee>
-      )}
+    <div className="my-15">
+      <h1 className="text-center text-4xl mb-4 font-extrabold">
+        Featured Groups
+      </h1>
+      <div className="bg-base-200">
+        {loading ? (
+          <LoadingSpinner></LoadingSpinner>
+        ) : (
+          <div className="mx-auto grid md:grid-cols-2 lg:grid-cols-3 w-10/12 xl:grid-cols-4 gap-7 my-10 p-4 lg:p-12 rounded-2xl">
+            {featuredGroups.map((data) => (
+              <GroupCard key={data._id} data={data}></GroupCard>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

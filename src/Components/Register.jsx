@@ -3,9 +3,10 @@ import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
+import { FaGoogle } from "react-icons/fa";
 
 const Register = () => {
-  const { createUser, setUser, updateUser } = use(AuthContext);
+  const { createUser, setUser, updateUser, googleLogin } = use(AuthContext);
   const navigate = useNavigate();
 
   const displayError = (errorMessage) => {
@@ -59,9 +60,35 @@ const Register = () => {
       });
   };
 
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        if (user) {
+          Swal.fire({
+            title: "Logged In!",
+            text: "You have successfully Logged In!",
+            icon: "success",
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "Ok",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              navigate(location?.state || "/");
+            }
+          });
+        }
+      })
+      .catch((error) => {
+        const ErrorMessage = error.message;
+        toast.error(ErrorMessage, {
+          position: "top-left",
+        });
+      });
+  };
+
   return (
-    <div className="hero bg-base-200 min-h-screen">
-      <div className="hero-content flex-col lg:flex-row-reverse">
+    <div className="hero bg-base-100 min-h-screen">
+      <div className="hero-content flex-col lg:flex-row-reverse w-full">
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <div className="card-body">
             <h1 className="text-4xl text-center py-4">Register</h1>
@@ -107,6 +134,13 @@ const Register = () => {
                 className="btn btn-neutral w-full"
                 value={"Sign Up"}
               />
+              <button
+                onClick={handleGoogleLogin}
+                className="btn btn-neutral w-full"
+              >
+                <FaGoogle />
+                Log In with Google
+              </button>
               <p>
                 Already have an account?{" "}
                 <Link

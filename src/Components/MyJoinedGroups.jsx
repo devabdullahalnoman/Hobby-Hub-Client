@@ -29,8 +29,8 @@ const MyJoinedGroups = () => {
   );
 
   return (
-    <div className="lg:w-10/12 mx-auto mb-6 lg:min-h-screen">
-      <h1 className="text-4xl text-center my-6">My Joined Groups</h1>
+    <div className="lg:w-10/12 mx-auto lg:min-h-screen">
+      <h1 className="text-4xl text-center mb-6">My Joined Groups</h1>
       <div className="overflow-x-auto">
         <table className="table">
           <thead>

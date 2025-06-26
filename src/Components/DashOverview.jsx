@@ -13,7 +13,7 @@ const DashOverview = () => {
   console.log(user);
   console.log(groupsData);
   return (
-    <div className="lg:w-10/12 mx-auto">
+    <div className="lg:w-11/12 mx-auto">
       <h1 className="text-5xl md:text-7xl mt-5 font-extrabold">
         Welcome, {user.displayName}!
       </h1>

@@ -69,8 +69,8 @@ const Login = () => {
   };
 
   return (
-    <div className="hero h-screen bg-base-200">
-      <div className="hero-content flex-col lg:flex-row-reverse">
+    <div className="hero h-screen bg-base-100">
+      <div className="hero-content flex-col lg:flex-row-reverse lg:w-3/12">
         <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
           <div className="card-body">
             <h1 className="text-4xl text-center py-4">Log In</h1>

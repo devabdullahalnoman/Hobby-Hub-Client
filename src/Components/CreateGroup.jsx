@@ -48,7 +48,7 @@ const CreateGroup = () => {
 
   return (
     <div className="lg:w-10/12 mx-auto">
-      <h1 className="text-center py-5 text-4xl mt-5">Create Group</h1>
+      <h1 className="text-center pb-5 text-4xl">Create Group</h1>
       <form onSubmit={handleCreateGroup}>
         <fieldset className="bg-base-200 border-base-300 rounded-box border p-4 grid lg:grid-cols-2 gap-9">
           <legend className="fieldset-legend">User Information</legend>
