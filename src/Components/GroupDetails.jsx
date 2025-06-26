@@ -62,48 +62,59 @@ const GroupDetails = () => {
       });
   };
   return (
-    <div className="card bg-base-200 shadow-sm w-10/12 mx-auto my-6 py-6">
-      <figure>
-        <img src={group.groupPhoto} alt="group banner" />
-      </figure>
-      <div className="card-body">
-        <h2 className="text-center text-4xl font-extrabold">
-          {group.groupName}
-        </h2>
-        <p className="text-2xl font-semibold text-center">{group.category}</p>
-        <p className="text-2xl mt-3">
-          <span className="text-xl font-medium mr-3">Group Creator: </span>
-          {group.userName}
-        </p>
-        <p className="text-2xl mt-3">
-          <span className="text-xl font-medium mr-3">Meeting Place: </span>
-          {group.meetingLocation}
-        </p>
-        <p className="text-2xl my-3">
-          <span className="text-xl font-medium mr-3">Maximum Members: </span>
-          {group.maxMembers}
-        </p>
-        <p className="text-2xl font-bold">Start Date:</p>
-        <p className="text-xl">{formattedDate}</p>
-        <p className="text-2xl mt-3">Members:</p>
-        <div className="flex flex-col md:flex-row md:flex-wrap gap-3">
-          {members.map((member, index) => (
-            <Members key={index} member={member}></Members>
-          ))}
+    <div className="card bg-base-200 shadow-sm my-10 py-6">
+      <div className="text-center space-y-2">
+        <h1 className="text-4xl font-semibold">{group.groupName}</h1>
+      <p className="text-2xl font-bold mb-6">{group.category}</p>
+      </div>
+
+      <div className="lg:grid grid-cols-12 w-10/12 mx-auto">
+        <div className="col-span-6">
+          <figure className="flex flex-col">
+            <img src={group.groupPhoto} alt="group banner" />
+            <figcaption>Artistic Vibe</figcaption>
+          </figure>
         </div>
-        <div className="text-center bg-base-100 rounded-lg my-2 mt-3.5">
-          <h1 className="text-2xl font-bold my-2">Description</h1>
-          <p className="text-xl">{group.description}</p>
+         <div className="divider divider-horizontal"></div>
+        <div className="col-span-5">
+          <div className="card-body">
+            <p className="text-2xl mt-3">
+              <span className="text-xl font-medium mr-3">Group Creator: </span>
+              {group.userName}
+            </p>
+            <p className="text-2xl mt-3">
+              <span className="text-xl font-medium mr-3">Meeting Place: </span>
+              {group.meetingLocation}
+            </p>
+            <p className="text-2xl my-3">
+              <span className="text-xl font-medium mr-3">
+                Maximum Members:{" "}
+              </span>
+              {group.maxMembers}
+            </p>
+            <p className="text-2xl font-bold">Start Date:</p>
+            <p className="text-xl">{formattedDate}</p>
+            <p className="text-2xl mt-3">Members:</p>
+            <div className="flex flex-col md:flex-row md:flex-wrap gap-3">
+              {members.map((member, index) => (
+                <Members key={index} member={member}></Members>
+              ))}
+            </div>
+            <div className="text-center bg-base-100 rounded-lg my-2 mt-3.5">
+              <h1 className="text-2xl font-bold my-2">Description</h1>
+              <p className="text-xl">{group.description}</p>
+            </div>
+            {groupStartDate >= today ? (
+              <button onClick={handleJoin} className="btn btn-primary text-xl">
+                Join
+              </button>
+            ) : (
+              <button className="btn btn-secondary text-xl" disabled>
+                This group is no longer active
+              </button>
+            )}
+          </div>
         </div>
-        {groupStartDate >= today ? (
-          <button onClick={handleJoin} className="btn btn-primary text-xl">
-            Join
-          </button>
-        ) : (
-          <button className="btn btn-secondary text-xl" disabled>
-            This group is no longer active
-          </button>
-        )}
       </div>
     </div>
   );
