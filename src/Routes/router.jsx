@@ -12,6 +12,9 @@ import GroupDetails from "../Components/GroupDetails";
 import LoadingSpinner from "../Components/LoadingSpinner";
 import UpdateGroup from "../Components/UpdateGroup";
 import PageNotFound from "../404Page/PageNotFound";
+import ContactUs from "../Components/ContactUs";
+import Dashboard from "../Layouts/Dashboard";
+import DashOverview from "../Components/DashOverview";
 
 const router = createBrowserRouter([
   {
@@ -32,14 +35,6 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/createGroup",
-        element: (
-          <PrivateRoutes>
-            <CreateGroup></CreateGroup>
-          </PrivateRoutes>
-        ),
-      },
-      {
         path: "/allGroups",
         element: <AllGroups></AllGroups>,
       },
@@ -55,14 +50,6 @@ const router = createBrowserRouter([
         hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>,
       },
       {
-        path: "/myGroups",
-        element: (
-          <PrivateRoutes>
-            <MyGroups></MyGroups>
-          </PrivateRoutes>
-        ),
-      },
-      {
         path: "/updateGroup/:id",
         loader: ({ params }) =>
           fetch(`https://hobby-hub-server-chi.vercel.app/groups/${params.id}`),
@@ -72,6 +59,44 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>,
+      },
+      {
+        path: "/contactUs",
+        element: <ContactUs></ContactUs>,
+      },
+      {
+        path: "/dashboard",
+        element: (
+          <PrivateRoutes>
+            <Dashboard></Dashboard>
+          </PrivateRoutes>
+        ),
+        children: [
+          {
+            index: true,
+            element: (
+              <PrivateRoutes>
+                <DashOverview></DashOverview>
+              </PrivateRoutes>
+            ),
+          },
+          {
+            path: "createGroup",
+            element: (
+              <PrivateRoutes>
+                <CreateGroup></CreateGroup>
+              </PrivateRoutes>
+            ),
+          },
+          {
+            path: "myGroups",
+            element: (
+              <PrivateRoutes>
+                <MyGroups></MyGroups>
+              </PrivateRoutes>
+            ),
+          },
+        ],
       },
       {
         path: "/*",

@@ -4,11 +4,25 @@ import { NavLink } from "react-router";
 const Footer = () => {
   return (
     <footer className="footer footer-horizontal footer-center bg-primary text-base-content rounded p-10">
-      <nav className="grid md:grid-flow-col gap-4 text-lg">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/allGroups">All Groups</NavLink>
-        <NavLink to="/createGroup">Create Group</NavLink>
-        <NavLink to="/myGroups">My Groups</NavLink>
+      <h1 className="text-3xl font-bold">HobbyHub</h1>
+      <nav className="grid md:grid-flow-col gap-4">
+        <ul className="menu menu-horizontal px-1 font-medium flex-col md:flex lg:flex-row text-lg">
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/allGroups">All Groups</NavLink>
+          </li>
+          <li>
+            <NavLink to="/createGroup">Create Group</NavLink>
+          </li>
+          <li>
+            <NavLink to="/myGroups">My Groups</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contactUs">Contact Us</NavLink>
+          </li>
+        </ul>
       </nav>
       <nav>
         <div className="grid grid-flow-col gap-4">
@@ -44,12 +58,6 @@ const Footer = () => {
           </a>
         </div>
       </nav>
-      <aside>
-        <p>
-          Copyright © {new Date().getFullYear()} - All right reserved by
-          HobbyHub
-        </p>
-      </aside>
     </footer>
   );
 };

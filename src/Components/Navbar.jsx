@@ -51,10 +51,7 @@ const Navbar = () => {
         <NavLink to="/allGroups">All Groups</NavLink>
       </li>
       <li>
-        <NavLink to="/createGroup">Create Group</NavLink>
-      </li>
-      <li>
-        <NavLink to="/myGroups">My Groups</NavLink>
+        <NavLink to="/contactUs">Contact Us</NavLink>
       </li>
     </div>
   );
@@ -90,9 +87,20 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow bg-base-100"
               >
                 {links}
+                <div className="flex items-center justify-between">
+                  <p>Theme</p>
+                  <label className="toggle mr-3 text-base-content">
+                    <input
+                      type="checkbox"
+                      className="theme-controller"
+                      checked={theme === "dark"}
+                      onChange={handleToggleTheme}
+                    />
+                  </label>
+                </div>
                 <div className="flex flex-col md:hidden gap-2 mt-3">
                   {user ? (
-                    <div className="flex justify-around">
+                    <div className="flex flex-col">
                       <div className="avatar relative group mr-3">
                         <div className="w-12 rounded-full">
                           <img src={user.photoURL} />
@@ -101,12 +109,19 @@ const Navbar = () => {
                           {user.displayName}
                         </p>
                       </div>
-                      <button
-                        onClick={handleLogOut}
-                        className="btn btn-outline"
-                      >
-                        Log Out
-                      </button>
+                      <div className="flex flex-col gap-2">
+                        <NavLink to="/dashboard">
+                          <button className="btn btn-outline hover:bg-base-100 w-full">
+                            Dashboard
+                          </button>
+                        </NavLink>
+                        <button
+                          onClick={handleLogOut}
+                          className="btn btn-outline mt-2"
+                        >
+                          Log Out
+                        </button>
+                      </div>
                     </div>
                   ) : (
                     <div className="flex justify-around">
@@ -118,17 +133,6 @@ const Navbar = () => {
                       </NavLink>
                     </div>
                   )}
-                  <div className="flex items-center justify-around">
-                    <p>Theme</p>
-                    <label className="toggle mr-3 text-base-content">
-                      <input
-                        type="checkbox"
-                        className="theme-controller"
-                        checked={theme === "dark"}
-                        onChange={handleToggleTheme}
-                      />
-                    </label>
-                  </div>
                 </div>
               </ul>
             </div>
@@ -149,7 +153,7 @@ const Navbar = () => {
               />
             </label>
             {user ? (
-              <div>
+              <div className="flex items-center">
                 <div className="avatar relative group mr-3">
                   <div className="w-12 rounded-full">
                     <img src={user.photoURL} />
@@ -158,12 +162,19 @@ const Navbar = () => {
                     {user.displayName}
                   </p>
                 </div>
-                <button
-                  onClick={handleLogOut}
-                  className="btn btn-outline hover:bg-base-100 text-lg"
-                >
-                  Log Out
-                </button>
+                <div className="flex items-center gap-2">
+                  <NavLink to="/dashboard">
+                    <button className="btn btn-outline hover:bg-base-100 text-lg">
+                      Dashboard
+                    </button>
+                  </NavLink>
+                  <button
+                    onClick={handleLogOut}
+                    className="btn btn-outline hover:bg-base-100 text-lg"
+                  >
+                    Log Out
+                  </button>
+                </div>
               </div>
             ) : (
               <div>
