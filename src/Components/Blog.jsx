@@ -38,7 +38,7 @@ const BlogSection = () => {
               <h3 className="text-2xl font-semibold mt-2 mb-3">
                 {entry.title}
               </h3>
-              <p className="text-base text-gray-700">{entry.snippet}</p>
+              <p className="text-xl text-gray-500">{entry.snippet}</p>
             </div>
           ))}
         </div>

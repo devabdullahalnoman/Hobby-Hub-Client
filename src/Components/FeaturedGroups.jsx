@@ -16,7 +16,7 @@ const FeaturedGroups = () => {
       <h1 className="text-center text-4xl mb-6 font-extrabold">
         Featured Groups
       </h1>
-      <div className="bg-base-200">
+      <div className="bg-base-200 py-6 lg:py-0">
         {loading ? (
           <LoadingSpinner></LoadingSpinner>
         ) : (
