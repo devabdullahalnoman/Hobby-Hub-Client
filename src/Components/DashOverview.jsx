@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { GroupsContext } from "../Contexts/GroupsContext";
 import { AuthContext } from "../Contexts/AuthContext";
+import MyContributionChart from "./MyContributionChart";
+import MyJoinedChart from "./MyJoinedChart";
 
 const DashOverview = () => {
   const { groupsData } = useContext(GroupsContext);
@@ -10,22 +12,11 @@ const DashOverview = () => {
     group.members?.some((member) => member.uid === user.uid)
   );
   return (
-    <div className="lg:w-11/12 mx-auto">
+    <div>
       <h1 className="text-5xl md:text-7xl mt-5 font-extrabold">
         Welcome, {user.displayName}!
       </h1>
-      <div className="lg:flex items-center justify-around my-10 rounded-2xl p-6 space-y-5 bg-base-200">
-        <div className="avatar">
-          <div className="w-50 rounded-full">
-            <img src={user?.photoURL} />
-          </div>
-        </div>
-        <div className="space-y-2">
-          <h2 className="text-2xl md:text-4xl">{user.displayName}</h2>
-          <h3 className="text-xl md:text-3xl">{user.email}</h3>
-        </div>
-      </div>
-      <div className="rounded-2xl p-6 bg-base-200">
+      <div className="rounded-2xl p-6 bg-base-200 mt-15 col-span-3">
         <h1 className="text-5xl mb-5">Dashboard</h1>
         <div>
           <div className="flex flex-col lg:flex-row justify-center gap-4">
@@ -51,6 +42,16 @@ const DashOverview = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="lg:flex justify-center gap-4">
+            <MyContributionChart
+              totalGroups={groupsData.length}
+              myCreatedGroups={myGroups.length}
+            />
+            <MyJoinedChart
+              totalGroups={groupsData.length}
+              myJoinedGroups={myJoinedGroups.length}
+            />
           </div>
         </div>
       </div>
