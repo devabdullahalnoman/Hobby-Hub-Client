@@ -3,6 +3,7 @@ import Banner from "../Components/Banner";
 import FeaturedGroups from "../Components/FeaturedGroups";
 import HowItWorks from "../Components/HowItWorks";
 import BlogSection from "../Components/Blog";
+import CategoriesMarquee from "../Components/CategoriesMarquee";
 
 const HomePage = () => {
   return (
@@ -10,6 +11,7 @@ const HomePage = () => {
       <Banner></Banner>
       <FeaturedGroups></FeaturedGroups>
       <HowItWorks></HowItWorks>
+      <CategoriesMarquee></CategoriesMarquee>
       <BlogSection></BlogSection>
     </div>
   );

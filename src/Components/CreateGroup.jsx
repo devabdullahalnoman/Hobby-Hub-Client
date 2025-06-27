@@ -126,7 +126,7 @@ const CreateGroup = () => {
             <fieldset className="fieldset">
               <legend className="fieldset-legend">Hobby Category</legend>
               <select
-                defaultValue="Pick a browser"
+                defaultValue="Pick a Category"
                 className="select w-full"
                 name="category"
                 required
