@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { GroupsContext } from "../Contexts/GroupsContext";
 import { AuthContext } from "../Contexts/AuthContext";
 import MyContributionChart from "./MyContributionChart";
@@ -7,10 +7,24 @@ import MyJoinedChart from "./MyJoinedChart";
 const DashOverview = () => {
   const { groupsData } = useContext(GroupsContext);
   const { user } = useContext(AuthContext);
-  const myGroups = groupsData.filter((group) => user.uid === group.creatorId);
-  const myJoinedGroups = groupsData.filter((group) =>
-    group.members?.some((member) => member.uid === user.uid)
-  );
+  // const myGroups = groupsData.filter((group) => user.uid === group.creatorId);
+  // const myJoinedGroups = groupsData.filter((group) =>
+  //   group.members?.some((member) => member.uid === user.uid)
+  // );
+
+  const [myGroups, setMyGroups] = useState([]);
+  const [myJoinedGroups, setMyJoinedGroups] = useState([]);
+
+  useEffect(() => {
+    const created = groupsData.filter((group) => user.uid === group.creatorId);
+    const joined = groupsData.filter((group) =>
+      group.members?.some((member) => member.uid === user.uid)
+    );
+
+    setMyGroups(created);
+    setMyJoinedGroups(joined);
+  }, [groupsData, user.uid]);
+
   return (
     <div>
       <h1 className="text-5xl md:text-7xl mt-5 font-extrabold">

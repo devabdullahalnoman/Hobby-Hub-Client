@@ -13,7 +13,7 @@ const GroupsProvider = ({ children }) => {
         setGroupsData(data);
         setLoading(false);
       });
-  }, [setGroupsData]);
+  }, []);
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -25,16 +25,32 @@ const GroupsProvider = ({ children }) => {
     }).format(date);
   };
 
+  const refetchGroups = async () => {
+    try {
+      const res = await fetch("https://hobby-hub-server-chi.vercel.app/");
+      const data = await res.json();
+      setGroupsData(data);
+    } catch (err) {
+      console.error("Failed to refetch groups:", err);
+    }
+  };
+
   const providerData = {
     groupsData,
     setGroupsData,
     formatDate,
     loading,
+    setLoading,
     members,
     setMembers,
+    refetchGroups,
   };
 
-  return <GroupsContext value={providerData}>{children}</GroupsContext>;
+  return (
+    <GroupsContext.Provider value={providerData}>
+      {children}
+    </GroupsContext.Provider>
+  );
 };
 
 export default GroupsProvider;

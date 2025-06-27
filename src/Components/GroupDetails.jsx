@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { useContext, useState } from "react";
 import { useLoaderData } from "react-router";
 import { GroupsContext } from "../Contexts/GroupsContext";
 import Members from "./Members";
@@ -7,8 +7,8 @@ import Swal from "sweetalert2";
 
 const GroupDetails = () => {
   const group = useLoaderData();
-  const { formatDate } = use(GroupsContext);
-  const { user } = use(AuthContext);
+  const { formatDate, refetchGroups } = useContext(GroupsContext);
+  const { user } = useContext(AuthContext);
   const formattedDate = formatDate(group.startDate);
   const today = new Date();
   const groupStartDate = new Date(group.startDate);
@@ -58,6 +58,7 @@ const GroupDetails = () => {
           });
 
           setMembers([...members, newMember]);
+          refetchGroups();
         }
       });
   };
@@ -65,7 +66,7 @@ const GroupDetails = () => {
     <div className="card bg-base-200 shadow-sm my-10 py-6">
       <div className="text-center space-y-2">
         <h1 className="text-4xl font-semibold">{group.groupName}</h1>
-      <p className="text-2xl font-bold mb-6">{group.category}</p>
+        <p className="text-2xl font-bold mb-6">{group.category}</p>
       </div>
 
       <div className="lg:grid grid-cols-12 w-10/12 mx-auto">
@@ -75,7 +76,7 @@ const GroupDetails = () => {
             <figcaption>Artistic Vibe</figcaption>
           </figure>
         </div>
-         <div className="divider divider-horizontal col-span-2 mx-auto"></div>
+        <div className="divider divider-horizontal col-span-2 mx-auto"></div>
         <div className="col-span-5">
           <div className="card-body">
             <p className="text-2xl mt-3">
