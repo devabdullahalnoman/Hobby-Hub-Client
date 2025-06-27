@@ -4,10 +4,13 @@ import { Link } from "react-router";
 
 const PageNotFound = () => {
   return (
-    <div className="grid lg:grid-cols-2 w-11/12 mx-auto mb-8">
-      <img src={notfound} alt="" />
+    <div className="flex flex-col justify-center text-center lg:grid grid-cols-2 w-10/12 mx-auto my-20">
+      <div className="flex items-center justify-center">
+        <img src={notfound} alt="" />
+      </div>
+
       <div className="flex flex-col items-center justify-center">
-        <h1 className="text-4xl mb-6">Go back to Home</h1>
+        <h1 className="text-4xl my-6">Go back to Home</h1>
         <Link to="/">
           <button className="btn btn-xl btn-primary">Home</button>
         </Link>

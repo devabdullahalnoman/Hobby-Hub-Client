@@ -104,23 +104,22 @@ const Navbar = () => {
                 <div className="flex flex-col md:hidden gap-2 mt-3">
                   {user ? (
                     <div className="flex flex-col">
-                      <div className="avatar relative group mr-3">
-                        <div className="w-12 rounded-full">
-                          <img src={user.photoURL} />
-                        </div>
-                        <p className="absolute z-10 top-2 text-base-content text-2xl right-2 rounded-sm px-3 hidden group-hover:flex bg-base-100">
-                          {user.displayName}
-                        </p>
-                      </div>
-                      <div className="flex flex-col gap-2">
+                      <div className="mb-3">
                         <NavLink to="/dashboard">
                           <button className="btn btn-outline hover:bg-base-100 w-full">
                             Dashboard
                           </button>
                         </NavLink>
+                      </div>
+                      <div className="flex items-center justify-around">
+                        <div className="avatar">
+                          <div className="w-12 rounded-full">
+                            <img src={user.photoURL} />
+                          </div>
+                        </div>
                         <button
                           onClick={handleLogOut}
-                          className="btn btn-outline mt-2"
+                          className="btn btn-outline"
                         >
                           Log Out
                         </button>
