@@ -9,15 +9,12 @@ const DashOverview = () => {
   const myJoinedGroups = groupsData.filter((group) =>
     group.members?.some((member) => member.uid === user.uid)
   );
-  console.log(myJoinedGroups);
-  console.log(user);
-  console.log(groupsData);
   return (
     <div className="lg:w-11/12 mx-auto">
       <h1 className="text-5xl md:text-7xl mt-5 font-extrabold">
         Welcome, {user.displayName}!
       </h1>
-      <div className="lg:flex items-center justify-between my-10 rounded-2xl p-6 space-y-5 bg-base-200">
+      <div className="lg:flex items-center justify-around my-10 rounded-2xl p-6 space-y-5 bg-base-200">
         <div className="avatar">
           <div className="w-50 rounded-full">
             <img src={user?.photoURL} />

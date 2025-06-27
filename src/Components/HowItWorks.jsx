@@ -5,8 +5,8 @@ import { Slide } from "react-awesome-reveal";
 const HowItWorks = () => {
   return (
     <Slide direction="right" triggerOnce>
-      <div className="w-11/12 mx-auto my-8 bg-base-200 px-4 md:px-8 lg:px-18 pb-12 rounded-2xl">
-        <h1 className="text-4xl text-center py-8">
+      <div className="lg:w-10/12 lg:mx-auto my-10 bg-base-200 mx-2 px-4 md:px-8 lg:px-18 pb-12 rounded-2xl">
+        <h1 className="text-4xl text-center py-8 font-bold">
           How It Works – Steps to Get Started
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7">

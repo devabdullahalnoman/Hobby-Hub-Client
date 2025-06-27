@@ -12,7 +12,7 @@ const FeaturedGroups = () => {
     .slice(0, 8);
 
   return (
-    <div className="my-15">
+    <div className="my-15 shadow-lg">
       <h1 className="text-center text-4xl mb-6 font-extrabold">
         Featured Groups
       </h1>
@@ -20,7 +20,7 @@ const FeaturedGroups = () => {
         {loading ? (
           <LoadingSpinner></LoadingSpinner>
         ) : (
-          <div className="mx-auto grid md:grid-cols-2 lg:grid-cols-3 w-10/12 xl:grid-cols-4 gap-7 my-10 p-4 lg:p-12 rounded-2xl">
+          <div className="mx-auto grid md:grid-cols-2 lg:grid-cols-3 w-10/12 xl:grid-cols-4 gap-7 my-10 p-4 lg:py-12 rounded-2xl">
             {featuredGroups.map((data) => (
               <GroupCard key={data._id} data={data}></GroupCard>
             ))}

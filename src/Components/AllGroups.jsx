@@ -27,7 +27,9 @@ const AllGroups = () => {
   return (
     <div>
       <h1 className="text-4xl mt-10 text-center">All Groups</h1>
-
+      <p className="text-2xl font-medium text-center">
+        Discover Our listed groups here
+      </p>
       <div className="w-10/12 mx-auto flex flex-col lg:flex-row flex-wrap justify-between items-center gap-4 my-6">
         <select
           value={category}
